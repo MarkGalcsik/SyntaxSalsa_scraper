@@ -19,18 +19,18 @@ class DanceandswaySpider(scrapy.Spider):
 
         # === BALETT ===
         'https://www.danceandsway.com/en-hu/collections/womens-ballet-dance-shoes',
-        'https://www.danceandsway.com/en-hu/collections/dance-leotards-1',   # balett ruha/leotard
+        'https://www.danceandsway.com/en-hu/collections/dance-leotards-1',  
 
-        # === ÁLTALÁNOS (női + férfi + gyerek) ===
+        # === ÁLTALÁNOS ===
         'https://www.danceandsway.com/en-hu/collections/women-dance-dresses',
         'https://www.danceandsway.com/en-hu/collections/women-dancewear',
         'https://www.danceandsway.com/en-hu/collections/mens-dance-shoes',
         'https://www.danceandsway.com/en-hu/collections/men-latin-wear',
         'https://www.danceandsway.com/en-hu/collections/kids-dance-shoes-1',
-        'https://www.danceandsway.com/en-hu/collections/girls-laitn-dance-wear',   # lány
+        'https://www.danceandsway.com/en-hu/collections/girls-laitn-dance-wear', 
         'https://www.danceandsway.com/en-hu/collections/dance-skirt',
 
-        # === KIEGÉSZÍTŐK (táska, stb.) ===
+        # === KIEGÉSZÍTŐK ===
         'https://www.danceandsway.com/en-hu/collections/accessories',
     ]
 
@@ -51,16 +51,14 @@ class DanceandswaySpider(scrapy.Spider):
             self.logger.info(f"Limit elérve ({self.MAX_PER_CATEGORY}): {base_url}")
             return
 
-        # Új oldal terméklinkjei (Quick buy + minden /products/ link)
         product_links = response.css('a[href*="/products/"]::attr(href)').getall()
-        product_links = list(dict.fromkeys(product_links))  # duplikációk eltávolítása
+        product_links = list(dict.fromkeys(product_links)) 
 
         remaining = self.MAX_PER_CATEGORY - collected
         links_to_scrape = [l for l in product_links if "/blog/" not in l][:remaining]
 
         for link in links_to_scrape:
             absolute_url = response.urljoin(link)
-            # FIX #1: Skip already-seen product URLs
             if absolute_url in self.seen_product_urls:
                 self.logger.debug(f"Már feldolgozva, kihagyva: {absolute_url}")
                 continue
@@ -68,7 +66,7 @@ class DanceandswaySpider(scrapy.Spider):
             self.category_counts[base_url] += 1
             yield response.follow(link, self.parse_product, cb_kwargs={'category_url': base_url})
 
-        # Lapozás (a danceandsway oldalon működik)
+        # Lapozás
         next_page = response.css(
             'li.next a::attr(href), '
             'a.next::attr(href), '
@@ -88,8 +86,7 @@ class DanceandswaySpider(scrapy.Spider):
         name = response.css('h1::text').get(default='').strip()
         item['Name'] = name or "Ismeretlen termék"
 
-        # Ár (USD formátumban marad)
-       # Ár kinyerése – specifikus a danceandsway.com jelenlegi struktúrájára
+        #Ár
         price_raw = response.css('.price__current::text').get(default='').strip()
         if not price_raw:
             price_raw = response.css(
@@ -105,7 +102,7 @@ class DanceandswaySpider(scrapy.Spider):
 
         self.logger.info(f"Ár: {item['Price']} | {response.url}")
 
-        # SKU (a Product Code mezőből!)
+        # SKU
         product_code = re.search(r'Product Code:\s*(\S+)', response.text)
         product_id = product_code.group(1) if product_code else None
 
