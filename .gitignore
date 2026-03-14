@@ -1,0 +1,17 @@
+# Python cache
+**/__pycache__/
+*.pyc
+
+# Adatok és képek
+images/
+*.xlsx
+*.csv
+~$*.xlsx
+
+# Scrapy belső mappa
+.scrapy/
+
+# Virtuális környezet
+.venv/
+venv/
+env/
