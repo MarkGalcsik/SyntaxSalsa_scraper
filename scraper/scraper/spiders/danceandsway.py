@@ -10,28 +10,28 @@ class DanceandswaySpider(scrapy.Spider):
 
     start_urls = [
         # === SALSA ===
-        'https://www.danceandsway.com/en-hu/collections/salsa-dresses',
-        'https://www.danceandsway.com/en-hu/collections/salsa-dance-shoes-1',
+        #'https://www.danceandsway.com/en-hu/collections/salsa-dresses',
+        #'https://www.danceandsway.com/en-hu/collections/salsa-dance-shoes-1',
 
         # === LATIN ===
-        'https://www.danceandsway.com/en-hu/collections/latin-dance-dress',
-        'https://www.danceandsway.com/en-hu/collections/dance-shoes-latin',
-
-        # === BALETT ===
-        'https://www.danceandsway.com/en-hu/collections/womens-ballet-dance-shoes',
-        'https://www.danceandsway.com/en-hu/collections/dance-leotards-1',  
+        ##'https://www.danceandsway.com/en-hu/collections/latin-dance-dress',
+        #'https://www.danceandsway.com/en-hu/collections/dance-shoes-latin',#
+#
+        ## === BALETT ===
+        #'https://www.danceandsway.com/en-hu/collections/womens-ballet-dance-shoes',
+        #'https://www.danceandsway.com/en-hu/collections/dance-leotards-1',  
 
         # === ÁLTALÁNOS ===
-        'https://www.danceandsway.com/en-hu/collections/women-dance-dresses',
-        'https://www.danceandsway.com/en-hu/collections/women-dancewear',
-        'https://www.danceandsway.com/en-hu/collections/mens-dance-shoes',
-        'https://www.danceandsway.com/en-hu/collections/men-latin-wear',
+        #'https://www.danceandsway.com/en-hu/collections/women-dance-dresses',
+        #'https://www.danceandsway.com/en-hu/collections/women-dancewear',
+        #'https://www.danceandsway.com/en-hu/collections/mens-dance-shoes',
+        #'https://www.danceandsway.com/en-hu/collections/men-latin-wear',
         'https://www.danceandsway.com/en-hu/collections/kids-dance-shoes-1',
-        'https://www.danceandsway.com/en-hu/collections/girls-laitn-dance-wear', 
-        'https://www.danceandsway.com/en-hu/collections/dance-skirt',
+         'https://www.danceandsway.com/en-hu/collections/kids-dance-wear', 
+        #'https://www.danceandsway.com/en-hu/collections/dance-skirt',
 
         # === KIEGÉSZÍTŐK ===
-        'https://www.danceandsway.com/en-hu/collections/accessories',
+        #'https://www.danceandsway.com/en-hu/collections/accessories',
     ]
 
     def __init__(self, *args, **kwargs):

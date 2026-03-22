@@ -17,8 +17,6 @@ class DancemasterSpider(scrapy.Spider):
         'https://www.dancemaster.hu/tanc-kiegeszitok',
         'https://www.dancemaster.hu/tanccipo/tanccipo-gyerekeknek',
         'https://www.dancemaster.hu/tancruhak/gyermekek',
-        'https://www.dancemaster.hu/tanccipo/tanccipo-gyerekeknek',
-        'https://www.dancemaster.hu/tancruhak/gyermekek',
     ]
 
     def __init__(self, *args, **kwargs):
