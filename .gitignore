@@ -7,6 +7,7 @@ images/
 *.xlsx
 *.csv
 ~$*.xlsx
+*.txt
 
 # Scrapy belső mappa
 .scrapy/

@@ -9,14 +9,14 @@ class DancemasterSpider(scrapy.Spider):
     MAX_PER_CATEGORY = 50
 
     start_urls = [
-        'https://www.dancemaster.hu/tanccipo/noi-tanccipo',
-        'https://www.dancemaster.hu/tancruhak/tancruhak-noknek',
+        #'https://www.dancemaster.hu/tanccipo/noi-tanccipo',
+        #'https://www.dancemaster.hu/tancruhak/tancruhak-noknek',
         'https://www.dancemaster.hu/tanc-kiegeszitok/tanckiegeszitok',
-        'https://www.dancemaster.hu/tanccipo/ferfi-tanccipo',
-        'https://www.dancemaster.hu/tancruhak/tancruhak-ferfiaknak',
+        #'https://www.dancemaster.hu/tanccipo/ferfi-tanccipo',
+        #'https://www.dancemaster.hu/tancruhak/tancruhak-ferfiaknak',
         'https://www.dancemaster.hu/tanc-kiegeszitok',
-        'https://www.dancemaster.hu/tanccipo/tanccipo-gyerekeknek',
-        'https://www.dancemaster.hu/tancruhak/gyermekek',
+        #'https://www.dancemaster.hu/tanccipo/tanccipo-gyerekeknek',
+        #'https://www.dancemaster.hu/tancruhak/gyermekek',
     ]
 
     def __init__(self, *args, **kwargs):
