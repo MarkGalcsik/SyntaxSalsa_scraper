@@ -10,7 +10,7 @@ Nem egy egyszerű könyvtár, hanem egy komplett, robusztus keretrendszer.
 A legnagyobb előny az úgynevezett Pipeline rendszer. Ahelyett, hogy a pók (spider) kódjába lenne belezsúfolva az adatok letöltése, tisztítása és mentése, a Scrapy szétválasztja ezeket a feladatokat. A pók csak kinyeri az adatot, míg a pipeline feldolgozza azt.
 Emellett támogatja a CSS és XPath szelektorokat, így a DevTOOls-ból kinyert szelektorokat szinte egy az egyben, konvertálás nélkül tudtam átemelni a kódomba.
 A képek kezelése is egyszerű a keretrendszerben. Az ImagesPipeline automatikusan kezeli a képek aszinkron letöltését, elkeüli a duplikát letöltést és könnyen testreszabható. A képeket ennek köszönhetően a termékek SKU nevével látom ezzel, annak érdekében, hogy könnyen felismerhető legyen.
----
+
 
 ##  A projektben szereplő Spiderek (Pókok)
 
