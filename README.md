@@ -90,9 +90,9 @@ Nem mindegyik termékhez volt jól strukturált magyar leírás, továbbá SEO m
   * **Működés:** Egy egyszerű szöveges fájlból beolvassa a feltöltéshez szükséges képek neveit, majd a scraper által letöltött nyers images mappábólátmásolja őket a images_ready célmappába. A folyamat végén pedig kilistázza a sikeres átmásolt, illetve a hiányző fájlokat.
   * **Miért volt rá szükség?** A scraping folyamat során több kép került letöltésre, mint amennyire szükségem van, így sokkal gyorsabban és igazából egyszerűbben tudom a kiválasztott termék képét feltölteni a HotCakes-be.
  
-  ##  Név és SKU tisztító/fordító script
+  ##  Név tisztító/fordító script
 
   Mivel az egyik oldal az angol nyelvű, így szükség van a termékek lefordítására, emellett a scraping folyamat során az SKU-knál egyedi értékek vannak, viszont a könnyebb megkülönböztetés miatt úgy gondoltam szüség van az SKU-k újragondolására.
-  * **Cél:** A terméknevek magyarra fordítása és az SKU-k egy egységes struktúra alapján elkészítése.
-  * **Működés:** A script elsőként regex kifejezésekkel megtisztítja az SKU-kat. Ezt követően a Claude API segítségével, kötegelve lefordítja a termékneveket.
+  * **Cél:** A terméknevek magyarra fordítása.
+  * **Működés:** A  Claude API segítségével, kötegelve lefordítja a termékneveket.
   * **MIért volt rá szükség?** A külföldi oldalakról kinyert nevek gyakran következetetlenek, vagy fölösleges kifejezéseket tartalmaznak. Úgy gondolom egy webshopnak fontos az, hogy a terméknevek megfelelőek és egységesek legyenek. A manuális átírás ennél a termékmennyiségnél nagyon hosszú lenne, így az AI alapú atuomatizáció jelentős időt spórolt meg.
